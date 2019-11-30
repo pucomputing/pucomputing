@@ -27,6 +27,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    // Google Analytics
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-50631312-13",
+      },
+    },
     // Blog
     {
       resolve: `gatsby-source-filesystem`,

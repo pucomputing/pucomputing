@@ -2,6 +2,7 @@ import React from "react"
 import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
 import Layout from "../components/layout";
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image";
 
 export default class IndexPage extends React.Component {
   render() {
@@ -25,13 +26,14 @@ export default class IndexPage extends React.Component {
                 </Carousel.Item>
             </Carousel>
             <Container style={{ marginTop: '80px', marginBottom: '80px' }}>
-                <h2>Latest Blogs</h2>
+                <h2>Latest Blog Post</h2>
                 <Row>
                     {posts.map(({ node }) => {
                         return (
                           <Col sm={3} key={node.fields.slug}>
                               <Card>
-                                <Card.Img variant="top" style={{width: '100%', height: '100%' }} src="/static/blog/sopu01.jpg" />
+                                {/* <Card.Img variant="top" style={{width: '100%', height: '100%' }} src="/static/blog/sopu01.jpg" /> */}
+                                <Img sizes={ node.frontmatter.thumbnail.childImageSharp.sizes } />
                                 <Card.Body>
                                   <Card.Title>{ node.frontmatter.title || node.fields.slug }</Card.Title>
                                   <Card.Text>
@@ -68,6 +70,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
