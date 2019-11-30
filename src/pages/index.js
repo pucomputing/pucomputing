@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="/static/img/member/whole.jpg"
+                    src="/img/member/whole.jpg"
                     alt="First slide"
                     />
                     {/* <Carousel.Caption>

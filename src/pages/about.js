@@ -12,7 +12,7 @@ export default function AboutPage() {
                 <h2>Faculty of Computer Science</h2>
                 <Row>
                     <Col sm>
-                        <img alt="Faculty of Computer Science" style={{width: '100%', height: 'auto' }} src="/static/img/faculty.png" />
+                        <img alt="Faculty of Computer Science" style={{width: '100%', height: 'auto' }} src="/img/faculty.png" />
                     </Col>
                     <Col sm>
                         <p>Computer Science is the theoritical study and practical application of computation, including topics such as: design and maintenance of software systems, distributed systems, human-computer interaction, computational modeling, artificial intelligence, mobile computing, programming languages, image processing, and computer graphics. With the rapidly growing technology industry, the use of information technology in almost every corner of human activity continue to create opportunities for our graduates.</p>
@@ -24,17 +24,17 @@ export default function AboutPage() {
                 <h2>Computing Dean and Head Study Program</h2>
                 <Row>
                     <Col sm>
-                        <img alt="Mr. Nur" style={{width: '100%', height: 'auto' }} src="/static/img/lecturer/nur-min.jpg" />
+                        <img alt="Mr. Nur" style={{width: '100%', height: 'auto' }} src="/img/lecturer/nur-min.jpg" />
                         <h5 style={{textAlign: "center"}}>Drs. Nur Hadisukmana, M.Sc.</h5>
                         <h5 style={{textAlign: "center"}}>Head of Bachelor of Information and Technology Study Program</h5>
                     </Col>
                     <Col sm>
-                        <img alt="Mr. Rila" style={{width: '100%', height: 'auto' }} src="/static/img/lecturer/rila-min.jpg" />
+                        <img alt="Mr. Rila" style={{width: '100%', height: 'auto' }} src="/img/lecturer/rila-min.jpg" />
                         <h5 style={{textAlign: "center"}}>Rila Mandala, Ph.D.</h5>
                         <h5 style={{textAlign: "center"}}>Dean of Faculty of Computer Science</h5>
                     </Col>
                     <Col sm>
-                        <img alt="Mr. Rikip" style={{width: '100%', height: 'auto' }} src="/static/img/lecturer/rikip-min.jpg" />
+                        <img alt="Mr. Rikip" style={{width: '100%', height: 'auto' }} src="/img/lecturer/rikip-min.jpg" />
                         <h5 style={{textAlign: "center"}}>Rikip Ginanjar, M.Sc.</h5>
                         <h5 style={{textAlign: "center"}}>Head of Bachelor of Information System Study Program</h5>
                     </Col>
@@ -44,7 +44,7 @@ export default function AboutPage() {
                 <h2>About PUMA Computing</h2>
                 <Row>
                     <Col sm>
-                        <img alt="PUMA Computing logo black" style={{width: '100%', height: 'auto' }} src="/static/img/logo/horizontal-black-complete.png" />
+                        <img alt="PUMA Computing logo black" style={{width: '100%', height: 'auto' }} src="/img/logo/horizontal-black-complete.png" />
                     </Col>
                     <Col sm>
                         <p>Computer Science is the theoritical study and practical application of computation, including topics such as: design and maintenance of software systems, distributed systems, human-computer interaction, computational modeling, artificial intelligence, mobile computing, programming languages, image processing, and computer graphics. With the rapidly growing technology industry, the use of information technology in almost every corner of human activity continue to create opportunities for our graduates.</p>
