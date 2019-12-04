@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image";
 import { InlineShareButtons } from 'sharethis-reactjs';
+import SEO from "../components/seo";
 
 export default class BlogPage extends React.Component {
     render() {
@@ -13,6 +14,10 @@ export default class BlogPage extends React.Component {
 
         return (
             <Layout>
+              <SEO
+                  title={post.frontmatter.title}
+                  description={post.frontmatter.description || post.excerpt}
+              />
               <Container style={{
                 marginTop: '80px',
                 marginBottom: '80px',

@@ -3,6 +3,7 @@ import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
 import Layout from "../components/layout";
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image";
+import SEO from "../components/seo";
 
 export default class IndexPage extends React.Component {
   render() {
@@ -12,6 +13,9 @@ export default class IndexPage extends React.Component {
 
     return (
         <Layout>
+            <SEO
+                title="Home"
+            />
             <Carousel>
                 <Carousel.Item>
                     <img

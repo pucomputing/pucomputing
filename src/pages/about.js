@@ -1,10 +1,14 @@
 import React from "react"
 import { Container, Row, Col } from 'react-bootstrap';
 import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 export default function AboutPage() {
     return (
         <Layout>
+            <SEO
+                title="About"
+            />
             <Container style={{marginTop: '80px'}}>
                 <h1 align="center">About Us</h1>
             </Container>

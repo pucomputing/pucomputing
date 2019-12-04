@@ -1,6 +1,8 @@
 import React from "react"
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import Layout from "../components/layout";
+import Database from "../helpers/database";
+import SEO from "../components/seo";
 
 export default class ContactPage extends React.Component {
     constructor(props) {
@@ -52,38 +54,25 @@ export default class ContactPage extends React.Component {
             message: this.state.message,
         };
 
-        fetch("/api/message/send", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: objectToURLEncode(data),
+        Database.ref("/messages/").push().set(data)
+        .then(_ => {
+            this.setState({
+                formState: 'success',
+            });
         })
-        .then(
-            (response) => response.text().then(
-                (response) => {
-                    let result = JSON.parse(response);
-                    if (result.success === true) {
-                        this.setState(state => ({
-                            formState: 'success',
-                        }));
-                    } else if (result.success === false){
-                        this.setState(state => ({
-                            formState: 'error',
-                        }));
-                    } else {
-                        this.setState(state => ({
-                            formState: 'ready',
-                        }));
-                    }
-                }
-            )
-        );
+        .catch(_ => {
+            this.setState({
+                formState: 'error',
+            });
+        });
     }
 
     render() {
         return (
             <Layout>
+                <SEO
+                    title="Contact"
+                />
                 <Container style={{marginTop: '80px'}}>
                     <h1 align="center">Contact Us</h1>
                 </Container>
