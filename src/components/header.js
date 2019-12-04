@@ -4,7 +4,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 const Header = () => (
   <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">
+      <Link to="/" className="navbar-brand">
           <img
           alt=""
           src="/img/logo/horizontal-white.png"
@@ -13,7 +13,7 @@ const Header = () => (
           className="d-inline-block align-top"
           />
           {/* {' PUComputing'} */}
-      </Navbar.Brand>
+      </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
