@@ -62,3 +62,38 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// Error happened, possibly caused by the Firebase package
+
+// failed Building static HTML for pages - 6.270s
+//  ERROR #95313 
+// Building static HTML failed
+// See our docs page for more info on this error: https://gatsby.dev/debug-html
+//   85 | ]);
+//   86 | 
+// > 87 | proxyRequestMethods(Index, '_index', IDBIndex, [
+//      | ^
+//   88 |   'get',
+//   89 |   'getKey',
+//   90 |   'getAll',
+//   WebpackError: ReferenceError: IDBIndex is not defined
+
+// Below is the solution. Refer to https://github.com/firebase/firebase-js-sdk/issues/2222#issuecomment-538072948
+exports.onCreateWebpackConfig = ({
+  stage,
+  actions,
+  getConfig
+}) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      externals: getConfig().externals.concat(function (context, request, callback) {
+        const regex = /^@?firebase(\/(.+))?/;
+        // Exclude firebase products from being bundled, so they will be loaded using require() at runtime.
+        if (regex.test(request)) {
+          return callback(null, 'umd ' + request);
+        }
+        callback();
+      })
+    });
+  }
+};
